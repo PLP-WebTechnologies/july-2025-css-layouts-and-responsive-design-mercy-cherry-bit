@@ -51,24 +51,20 @@ body {
 }
 
 /* Content */
-.content {
-  background: #fafafa;
-  padding: 20px;
-}
-
-/* Flexbox cards inside content */
-.cards {
+ .content {
   display: flex;
-  gap: 15px;
-  margin-top: 20px;
+  justify-content: center; /* centers the cards horizontally */
+  align-items: flex-start; /* aligns them at the top */
+  padding: 20px;
 }
 
-.card {
-  flex: 1;
-  background: #ddd;
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
+/* Grid for the cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  width: 100%;
+  max-width: 1000px; /* optional: limit max width */
 }
 
 /* Footer */
@@ -80,7 +76,7 @@ body {
   margin-top: 20px;
 }
 
-/* ========== MEDIA QUERIES ========== */
+/* MEDIA QUERIES */
 
 /* Tablet */
 @media (max-width: 900px) {
@@ -108,7 +104,4 @@ body {
     order: 2; /* Move sidebar below content */
   }
 
-  .cards {
-    flex-direction: column;
-  }
 }
